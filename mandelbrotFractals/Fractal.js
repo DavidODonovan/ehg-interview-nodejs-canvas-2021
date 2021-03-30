@@ -5,7 +5,9 @@ module.exports = class Fractal {
     this.maxiterations = maxIterations;
     this.palette = [];
     this.counter = 0;
+    this.bigColours = [];
     this.generatePalette();
+    this.createBigColoursArray();
   }
 
   createBigColoursArray=()=>{
@@ -14,6 +16,7 @@ module.exports = class Fractal {
       for(let g=0; g<256; g+=8){
         for(let b=0; b<256; b+=8){
           newArr.push([r, g, b, 255]);
+          this.bigColours.push([r, g, b, 255]);
         };
       };
     };
@@ -55,7 +58,6 @@ module.exports = class Fractal {
   };
 
   fractalizeImage=(imageData)=>{
-    console.log('palette:~~~~~~', this.palette[2])
     // Iterate over the pixels
     for (var y=0; y<this.height; y++) {
       for (var x=0; x<this.width; x++) {
@@ -66,7 +68,6 @@ module.exports = class Fractal {
 
   iterate=(x, y, imageData)=>{
     this.counter++;
-    console.log(this.counter);
     // Iteration variables
     var a = 0;
     var b = 0;
@@ -92,12 +93,17 @@ module.exports = class Fractal {
       // var index = Math.floor((iterations / (this.maxIterations-1)) * 255);
       // color = this.palette[index];
     }
-    console.log("color: ~~~", color);
     var pixelindex = (y * this.width + x) * 4;
     imageData.data[pixelindex] = color.r;
     imageData.data[pixelindex+1] = color.g;
     imageData.data[pixelindex+2] = color.b;
     imageData.data[pixelindex+3] = 255;
+  };
+
+  pushColours=(imageData, pixelIndex)=>{
+    // imageData.data[pixelIndex+1] = this.bigColours[1];
+    // imageData.data[pixelIndex+2] = this.bigColours[2];
+    // imageData.data[pixelIndex+3] = this.bigColours[3];
   };
 
 };

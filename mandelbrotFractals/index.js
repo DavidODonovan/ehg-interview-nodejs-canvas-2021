@@ -14,7 +14,10 @@ const coloursData = createBigColoursArray();
 const pixelsMatrix = ctx.createImageData(width, height);
 
 pushColoursIntoMatrix(pixelsMatrix, coloursData, width, height);
-fractalizeImage(pixelsMatrix);
+
+
+fractalizeImage(ctx, width, height, 120, 0);
+
 ctx.putImageData(pixelsMatrix, 0, 0);
 
 canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'mandelbrotFractals.png')))

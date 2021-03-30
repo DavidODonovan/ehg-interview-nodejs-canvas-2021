@@ -3,8 +3,8 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
 const Fractal = require('./Fractal');
 
-const width = 4096;
-const height = 8;
+const width = 2048;
+const height = 16;
 const maxIterations = 250;
 
 

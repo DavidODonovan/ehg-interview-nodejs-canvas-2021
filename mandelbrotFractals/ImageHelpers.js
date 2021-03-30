@@ -1,6 +1,6 @@
 module.exports = {
 
-  createBigArray: function(){
+  createBigColoursArray: function(){
     let newArr = [];
     for(let r=0; r<256; r+=8){
       for(let g=0; g<256; g+=8){
@@ -12,7 +12,7 @@ module.exports = {
     return newArr;
   },
 
-  createImage: function(pixelsMatrix, coloursData, width, height) {
+  pushColoursIntoMatrix: function(pixelsMatrix, coloursData, width, height) {
       // Loop over all of the pixels
       for (var x=0; x<width; x++) {
           for (var y=0; y<height; y++) {
@@ -28,5 +28,8 @@ module.exports = {
       };
   },
 
+  fractalizeImage: function(){
+
+  }
 
 };

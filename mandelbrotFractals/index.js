@@ -3,8 +3,8 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
 const Fractal = require('./Fractal');
 
-const width = 256;
-const height = 128;
+const width = 4096;
+const height = 8;
 const maxIterations = 250;
 
 
@@ -14,10 +14,9 @@ const pixelsMatrix = ctx.createImageData(width, height);
 
 const fractal = new Fractal(width, height, maxIterations);
 const coloursData = fractal.createBigColoursArray();
-// fractal.pushColoursIntoMatrix(pixelsMatrix, coloursData);
+
 fractal.fractalizeImage(pixelsMatrix);
 
 ctx.putImageData(pixelsMatrix, 0, 0);
 
-console.log(width*height/8)
 canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'mandelbrotFractals.png')))

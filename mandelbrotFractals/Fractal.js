@@ -22,22 +22,6 @@ module.exports = class Fractal {
     return newArr;
   };
 
-  pushColoursIntoMatrix=(pixelsMatrix, coloursData)=>{
-    // Loop over all of the pixels
-    for (var x=0; x<this.width; x++) {
-      for (var y=0; y<this.height; y++) {
-        // Get the pixel index
-        var pixelIndex = (y * this.width + x) * 4;
-        var colourIndex = (y * this.width + x);
-        // Set the pixel data
-        pixelsMatrix.data[pixelIndex] = coloursData[colourIndex][0];
-        pixelsMatrix.data[pixelIndex+1] = coloursData[colourIndex][1];
-        pixelsMatrix.data[pixelIndex+2] = coloursData[colourIndex][2];
-        pixelsMatrix.data[pixelIndex+3] = coloursData[colourIndex][3];
-      };
-    };
-  };
-
   fractalizeImage=(pixelsMatrix)=>{
     // Iterate over the pixels
     for (var y=0; y<this.height; y++) {

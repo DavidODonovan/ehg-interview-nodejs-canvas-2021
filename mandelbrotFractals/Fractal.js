@@ -3,7 +3,9 @@ module.exports = class Fractal {
     this.width = width;
     this.height = height;
     this.maxiterations = maxIterations;
+    this.palette = [];
     this.counter = 0;
+    this.generatePalette();
   }
 
   createBigColoursArray=()=>{
@@ -34,7 +36,26 @@ module.exports = class Fractal {
     };
   };
 
+  generatePalette=()=>{
+    // Calculate a gradient
+    var roffset = 24;
+    var goffset = 16;
+    var boffset = 0;
+    for (var i=0; i<256; i++) {
+      this.palette[i] = { r:roffset, g:goffset, b:boffset};
+
+      if (i < 64) {
+          roffset += 3;
+      } else if (i<128) {
+          goffset += 3;
+      } else if (i<192) {
+          boffset += 3;
+      }
+    };
+  };
+
   fractalizeImage=(imagew, imageh, imageData)=>{
+    console.log('palette:~~~~~~', this.palette[2])
     // Iterate over the pixels
     for (var y=0; y<imageh; y++) {
       for (var x=0; x<imagew; x++) {
@@ -63,7 +84,15 @@ module.exports = class Fractal {
       iterations++;
     };
 
-    const color = { r:0, g:0, b:0}; // Black
+    let color;
+    if (iterations == this.maxIterations) {
+      color = { r:0, g:0, b:0}; // Black
+    } else {
+      color = {r: 255, g:0, b:0 }
+      // var index = Math.floor((iterations / (this.maxIterations-1)) * 255);
+      // color = this.palette[index];
+    }
+    console.log("color: ~~~", color);
     var pixelindex = (y * this.width + x) * 4;
     imageData.data[pixelindex] = color.r;
     imageData.data[pixelindex+1] = color.g;

@@ -5,12 +5,15 @@ const { createCanvas, loadImage } = require('canvas')
 
 const data = BigO.createBigArray();
 
-const width = 128;
-const height = 56;
+
+const width = 256;
+const height = 128;
+
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');
 
 let myData = ctx.createImageData(width, height);
+console.log(data.length*4)//<----hmmmm!
 console.log(myData.data.length)
 
 

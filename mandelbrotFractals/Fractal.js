@@ -54,11 +54,11 @@ module.exports = class Fractal {
     };
   };
 
-  fractalizeImage=(imagew, imageh, imageData)=>{
+  fractalizeImage=(imageData)=>{
     console.log('palette:~~~~~~', this.palette[2])
     // Iterate over the pixels
-    for (var y=0; y<imageh; y++) {
-      for (var x=0; x<imagew; x++) {
+    for (var y=0; y<this.height; y++) {
+      for (var x=0; x<this.width; x++) {
         this.iterate(x, y, imageData);
       }
     }

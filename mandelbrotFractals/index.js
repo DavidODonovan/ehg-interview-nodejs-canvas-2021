@@ -14,7 +14,7 @@ const pixelsMatrix = ctx.createImageData(width, height);
 const fractal = new Fractal(width, height, maxIterations);
 const coloursData = fractal.createBigColoursArray();
 // fractal.pushColoursIntoMatrix(pixelsMatrix, coloursData);
-fractal.fractalizeImage(width, height, pixelsMatrix);
+fractal.fractalizeImage(pixelsMatrix);
 
 ctx.putImageData(pixelsMatrix, 0, 0);
 

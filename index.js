@@ -13,9 +13,7 @@ const coloursData = createBigArray();
 const pixelsMatrix = ctx.createImageData(width, height);
 
 createImage(pixelsMatrix, coloursData, width, height);
-console.log(pixelsMatrix.data.length);
 ctx.putImageData(pixelsMatrix, 0, 0);
-
 
 canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'colours.png')))
 

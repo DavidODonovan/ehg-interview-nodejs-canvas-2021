@@ -5,7 +5,8 @@ const Fractal = require('./Fractal');
 
 const width = 256;
 const height = 128;
-const maxIterations = 260;
+const maxIterations = 250;
+
 
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');
@@ -18,4 +19,5 @@ fractal.fractalizeImage(pixelsMatrix);
 
 ctx.putImageData(pixelsMatrix, 0, 0);
 
+console.log(width*height/8)
 canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'mandelbrotFractals.png')))

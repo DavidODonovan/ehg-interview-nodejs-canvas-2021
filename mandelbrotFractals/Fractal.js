@@ -6,7 +6,6 @@ module.exports = class Fractal {
     this.palette = [];
     this.counter = 0;
     this.coloursData = [];
-    this.generatePalette();
     this.createBigColoursArray();
   }
 
@@ -39,24 +38,6 @@ module.exports = class Fractal {
     };
   };
 
-  generatePalette=()=>{
-    // Calculate a gradient
-    var roffset = 24;
-    var goffset = 16;
-    var boffset = 0;
-    for (var i=0; i<256; i++) {
-      this.palette[i] = { r:roffset, g:goffset, b:boffset};
-
-      if (i < 64) {
-          roffset += 3;
-      } else if (i<128) {
-          goffset += 3;
-      } else if (i<192) {
-          boffset += 3;
-      }
-    };
-  };
-
   fractalizeImage=(pixelsMatrix)=>{
     // Iterate over the pixels
     for (var y=0; y<this.height; y++) {
@@ -67,24 +48,6 @@ module.exports = class Fractal {
   };
 
   iterate=(x, y, pixelsMatrix)=>{
-    this.counter++;
-    // Iteration variables
-    var a = 0;
-    var b = 0;
-    var rx = 0;
-    var ry = 0;
-    var iterations = 0;
-
-    while (iterations < this.maxIterations && (rx * rx + ry * ry <= 4)) {
-      rx = a * a - b * b;
-      ry = 2 * a * b;
-
-      // Next iteration
-      a = rx;
-      b = ry;
-      iterations++;
-    };
-
     var pixelIndex = (y * this.width + x) * 4;
     this.pushColours(pixelIndex, pixelsMatrix);
   };
@@ -98,7 +61,6 @@ module.exports = class Fractal {
       colour = this.coloursData.shift()
     };
 
-    console.log(this.coloursData.length);
     pixelsMatrix.data[pixelIndex] = colour[0];
     pixelsMatrix.data[pixelIndex+1] = colour[1];
     pixelsMatrix.data[pixelIndex+2] = colour[2];

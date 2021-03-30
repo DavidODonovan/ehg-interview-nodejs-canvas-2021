@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
-const { createBigArray, createImage } = require('./BigO');
-const fractals = require('./mandelbrotFractals');
+const { createBigArray, createImage } = require('./ImageHelpers');
 
 const width = 256;
 const height = 128;
@@ -16,4 +15,4 @@ const pixelsMatrix = ctx.createImageData(width, height);
 createImage(pixelsMatrix, coloursData, width, height);
 ctx.putImageData(pixelsMatrix, 0, 0);
 
-canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'colours.png')))
+canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'mandelbrotFractals.png')))

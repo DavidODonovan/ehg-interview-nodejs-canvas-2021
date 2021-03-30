@@ -9,12 +9,10 @@ const height = 128;
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');
 
-
 const coloursData = createBigColoursArray();
 const pixelsMatrix = ctx.createImageData(width, height);
 
 pushColoursIntoMatrix(pixelsMatrix, coloursData, width, height);
-
 
 fractalizeImage(ctx, width, height, 120, 0);
 

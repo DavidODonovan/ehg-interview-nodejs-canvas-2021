@@ -1,4 +1,4 @@
-module.exports = class ImageHelper {
+module.exports = class Fractal {
   constructor(width, height, maxIterations){
     this.width = width;
     this.height = height;
@@ -34,11 +34,11 @@ module.exports = class ImageHelper {
     };
   };
 
-  fractalizeImage=(imagew, imageh, imagedata)=>{
+  fractalizeImage=(imagew, imageh, imageData)=>{
     // Iterate over the pixels
     for (var y=0; y<imageh; y++) {
       for (var x=0; x<imagew; x++) {
-        this.iterate(imagew, imageh, x, y, this.maxiterations, imagedata);
+        this.iterate(x, y, this.maxIterations, imageData);
       }
     }
   };

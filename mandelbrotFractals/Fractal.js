@@ -61,6 +61,14 @@ module.exports = class Fractal {
       a = rx;
       b = ry;
       iterations++;
-    }
+    };
+
+    const color = { r:0, g:0, b:0}; // Black
+    var pixelindex = (y * this.width + x) * 4;
+    imageData.data[pixelindex] = color.r;
+    imageData.data[pixelindex+1] = color.g;
+    imageData.data[pixelindex+2] = color.b;
+    imageData.data[pixelindex+3] = 255;
   };
+
 };

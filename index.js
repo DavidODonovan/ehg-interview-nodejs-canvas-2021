@@ -9,9 +9,11 @@ const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');
 
 const coloursData = BigO.createBigArray();
-console.log(coloursData.length*4);
+const pixelsMatrix = ctx.createImageData(width, height);
 
-let pixelsMatrix = ctx.createImageData(width, height);
+
+console.log(coloursData[1]);
+console.log(coloursData.length);
 console.log(pixelsMatrix.data.length);
 
 function createImage() {
@@ -20,18 +22,17 @@ function createImage() {
         for (var y=0; y<height; y++) {
             // Get the pixel index
             var pixelIndex = (y * width + x) * 4;
-            // console.log(coloursData[pixelIndex]);
-
+            var colourIndex = (y * width + x);
             // Set the pixel data
-            // pixelsMatrix.data[pixelIndex] = coloursData[pixelIndex][0];
-            // pixelsMatrix.data[pixelIndex+1] = coloursData[pixelIndex][1];
-            // pixelsMatrix.data[pixelIndex+2] = coloursData[pixelIndex][2];
-            // pixelsMatrix.data[pixelIndex+3] = coloursData[pixelIndex][3];
+            pixelsMatrix.data[pixelIndex] = coloursData[colourIndex][0];
+            pixelsMatrix.data[pixelIndex+1] = coloursData[colourIndex][1];
+            pixelsMatrix.data[pixelIndex+2] = coloursData[colourIndex][2];
+            pixelsMatrix.data[pixelIndex+3] = coloursData[colourIndex][3];
         }
     }
 }
 createImage();
-// ctx.putImageData(pixelsMatrix, 0, 0);
+ctx.putImageData(pixelsMatrix, 0, 0);
 
 
 // pipe stream to file on local hard drive

@@ -38,13 +38,29 @@ module.exports = class Fractal {
     // Iterate over the pixels
     for (var y=0; y<imageh; y++) {
       for (var x=0; x<imagew; x++) {
-        this.iterate(x, y, this.maxIterations, imageData);
+        this.iterate(x, y, imageData);
       }
     }
   };
 
-  iterate=()=>{
+  iterate=(x, y, imageData)=>{
     this.counter++;
     console.log(this.counter);
+    // Iteration variables
+    var a = 0;
+    var b = 0;
+    var rx = 0;
+    var ry = 0;
+    var iterations = 0;
+
+    while (iterations < this.maxIterations && (rx * rx + ry * ry <= 4)) {
+      rx = a * a - b * b;
+      ry = 2 * a * b;
+
+      // Next iteration
+      a = rx;
+      b = ry;
+      iterations++;
+    }
   };
 };

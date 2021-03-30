@@ -4,7 +4,7 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas')
 
 const data = BigO.createBigArray();
-
+console.log(data)
 
 const width = 256;
 const height = 128;

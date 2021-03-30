@@ -44,6 +44,7 @@ module.exports = class Fractal {
   };
 
   iterate=()=>{
+    this.counter++;
     console.log(this.counter);
   };
 };

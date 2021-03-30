@@ -12,9 +12,7 @@ const ctx = canvas.getContext('2d');
 const coloursData = createBigArray();
 const pixelsMatrix = ctx.createImageData(width, height);
 
-
 createImage(pixelsMatrix, coloursData, width, height);
-
 ctx.putImageData(pixelsMatrix, 0, 0);
-// pipe stream to file on local hard drive
+
 canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'colours.png')))

@@ -13,8 +13,7 @@ const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');
 
 let myData = ctx.createImageData(width, height);
-console.log(data.length*4)//<----hmmmm!
-console.log(myData.data.length)
+console.log(myData.data)//<----each pixel has 4 values for rgba
 
 
 // pipe stream to file on local hard drive

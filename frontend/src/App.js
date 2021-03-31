@@ -6,8 +6,10 @@ import {
   GlobalColoursCSS
 } from 'styles/global';
 
+import allTheColours from './allTheColours.png';
 import { AppWrapper, StyledImage, Container } from './style';
-import colours from './allTheColours.png';
+import { Provider } from 'contexts/ReactDims';
+
 const App=()=>{
   return (
     <AppWrapper>
@@ -18,7 +20,7 @@ const App=()=>{
       <GlobalColoursCSS/>
       <Container>
         <StyledImage>
-          <img src={colours}/>
+          <img src={allTheColours}/>
         </StyledImage>
       </Container>
     </AppWrapper>

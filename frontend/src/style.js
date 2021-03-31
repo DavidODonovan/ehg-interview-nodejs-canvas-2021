@@ -1,7 +1,11 @@
 import styled, { keyframes, css } from 'styled-components';
 
 export const Container=styled.div`
-  border: 1px solid #fff;
+  border: 1px solid var(--bg-accent);
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+
   background: var(--bg);
   height: 50%;
   overflow-x: hidden;
@@ -12,10 +16,10 @@ export const Container=styled.div`
   margin: auto;
 `;
 
+// TODO: use calc() for scaling image and translationY in px;
 const imageAnim = keyframes`
 	0% {
 		transform: translateY(-4096px);
-    trans
 	}
 	100% {
 		transform: translateY(0px);
@@ -42,7 +46,6 @@ export const StyledImage=styled.div`
 export const AppWrapper=styled.div`
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;

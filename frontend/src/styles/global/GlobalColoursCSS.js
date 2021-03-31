@@ -6,7 +6,7 @@ const GlobalColours = createGlobalStyle`
     --bg:  #242526;
     --bg-accent: #484a4d;
     --text-color: #dadce1;
-    --border-radius: 8px;
+    --border-radius: 18px;
 
   };
 `;

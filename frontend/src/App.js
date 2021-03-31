@@ -6,7 +6,6 @@ import {
   GlobalColoursCSS
 } from 'styles/global';
 
-import allTheColours from './allTheColours.png';
 import AppWrapper from 'components/AppWrapper';
 import ImageContainer from 'components/ImageContainer';
 
@@ -19,8 +18,7 @@ const App=()=>{
       <GlobalWebkitScrolling/>
       <GlobalColoursCSS/>
 
-      <ImageContainer>
-      </ImageContainer>
+      <ImageContainer/>
 
     </AppWrapper>
   );

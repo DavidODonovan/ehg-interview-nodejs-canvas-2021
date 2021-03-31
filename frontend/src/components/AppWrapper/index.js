@@ -1,12 +1,11 @@
 import { Provider } from 'contexts/ReactDims';
 import { Layout, Container } from './style';
 
-const AppWrapper=(props)=>{
-  console.log(props)
+const AppWrapper=({children})=>{
   return (
     <Layout>
       <Provider>
-        {props.children}
+        {children}
       </Provider>
     </Layout>
   );

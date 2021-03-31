@@ -7,16 +7,17 @@ export const Container=styled.div`
   -moz-border-radius: var(--border-radius);
 
   background: var(--bg);
-  height: 50%;
+  height: 400px;
   overflow-x: hidden;
   overflow-y: hidden;
   max-width: 500px;
+
   display: flex;
   justify-content: center;
   margin: auto;
+
 `;
 
-// TODO: use calc() for scaling image and translationY in px;
 const imageAnim = keyframes`
 	0% {
 		transform: translateY(-4096px);
@@ -40,5 +41,3 @@ export const StyledImage=styled.div`
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
   }
 `;
-
-// css source: // https://superuser.com/questions/530317/how-to-prevent-chrome-from-blurring-small-images-when-zoomed-in

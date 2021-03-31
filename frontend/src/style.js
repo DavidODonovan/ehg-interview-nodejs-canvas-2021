@@ -2,14 +2,16 @@ import styled, { keyframes, css } from 'styled-components';
 
 export const Container=styled.div`
   border: 1px solid red;
-  width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
+  max-width: 400px;
+  margin: auto;
 `;
 
 const imageAnim = keyframes`
 	0% {
-		transform: translateY(-2048px);
+		transform: translateY(-4096px);
     trans
 	}
 	100% {
@@ -19,8 +21,8 @@ const imageAnim = keyframes`
 
 export const StyledImage=styled.div`
   img {
-    width: 400px;
-    animation: ${imageAnim} 4s ease-in-out;
+    width: 320px;
+    animation: ${imageAnim} 4s ease-in-out infinite;
 
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */

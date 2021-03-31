@@ -5,10 +5,11 @@ import allTheColours from './allTheColours.png';
 const ImageContainer=(props)=>{
   console.log(props);
   return (
-    <div>
-      <img src={allTheColours}/>
-      helllo
-    </div>
+    <Container>
+      <StyledImage>
+        <img src={allTheColours}/>
+      </StyledImage>
+    </Container>
   );
 };
 

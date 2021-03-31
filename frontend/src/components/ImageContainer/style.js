@@ -1,27 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
-// this function is used to calculate viewport height of entire image so we can traverse the full length using css translateY();
-const CreateAnim=({dims})=>{
 
-  const [ actualImageDims, setActualImageDims ] = useState({width: null, height: null});
-
-  useEffect(()=>{
-    const originalImageWidth = 16;
-    const originalImageHeight = 2048;
-    console.log("dims change:", dims)
-  }, [dims]);
-
-  return (
-    keyframes`
-    	0% {
-    		transform: translateY(-4096px);
-    	}
-    	100% {
-    		transform: translateY(0px);
-    	}
-    `);
-};
+//~~~~~~~~~~~~ styled-components ~~~~~~~~~~~~~//
 
 export const ImageWrapper=styled.div`
   border: 1px solid var(--bg-accent);
@@ -50,3 +31,29 @@ export const StyledImage=styled.div`
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
   }
 `;
+
+
+//~~~~~~~~~~~~ special function ~~~~~~~~~~~~~//
+// this function is used to calculate viewport height of entire image so we can traverse the full length using css translateY();
+
+const CreateAnim=({dims})=>{
+
+  const [ actualImageDims, setActualImageDims ] = useState({width: null, height: null});
+
+  useEffect(()=>{
+    const originalImageWidth = 16;
+    const originalImageHeight = 2048;
+    const widthRatio = dims.width/originalImageWidth;
+    console.log("widthRatio: ", widthRatio)
+  }, [dims]);
+
+  return (
+    keyframes`
+    	0% {
+    		transform: translateY(-4096px);
+    	}
+    	100% {
+    		transform: translateY(0px);
+    	}
+    `);
+};

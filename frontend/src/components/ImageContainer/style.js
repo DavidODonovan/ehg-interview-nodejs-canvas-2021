@@ -7,15 +7,8 @@ export const Container=styled.div`
   -moz-border-radius: var(--border-radius);
 
   background: var(--bg);
-  height: 400px;
   overflow-x: hidden;
-  overflow-y: hidden;
-  max-width: 500px;
-
-  display: flex;
-  justify-content: center;
-  margin: auto;
-
+  overflow-y: hidden
 `;
 
 // change this so it always traverses entire image.

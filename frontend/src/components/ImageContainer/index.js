@@ -10,7 +10,7 @@ const ImageContainer=({ dims })=>{
   return (
     <Container>
       <StyledImage>
-        {dims.width && (<img src={allTheColours}/>)}
+        hello
       </StyledImage>
     </Container>
   );

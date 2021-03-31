@@ -3,11 +3,9 @@ import { Layout, Container } from './style';
 
 const AppWrapper=({children})=>{
   return (
-    <Layout>
-      <Provider>
-        {children}
-      </Provider>
-    </Layout>
+        <Layout>
+          {children}
+        </Layout>
   );
 };
 

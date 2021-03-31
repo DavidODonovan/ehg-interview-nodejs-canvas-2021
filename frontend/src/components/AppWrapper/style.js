@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
 export const Layout=styled.div`
-  width: 100%;
-  height: 100vh;
   background-color: var(--bg);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  height: 100vh;
+  grid: 50px 1fr 1fr 50px / 50px 1fr 1fr 50px;
 `;

@@ -6,9 +6,11 @@ export const Container=styled.div`
   -webkit-border-radius: var(--border-radius);
   -moz-border-radius: var(--border-radius);
 
+  width: 100%;
+  height: 100%;
   background: var(--bg);
   overflow-x: hidden;
-  overflow-y: hidden
+  overflow-y: hidden;
 `;
 
 // change this so it always traverses entire image.

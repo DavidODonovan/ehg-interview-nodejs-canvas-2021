@@ -7,9 +7,8 @@ import {
 } from 'styles/global';
 
 import allTheColours from './allTheColours.png';
-import { StyledImage, Container } from './style';
 import AppWrapper from 'components/AppWrapper';
-import { Provider } from 'contexts/ReactDims';
+import ImageContainer from 'components/ImageContainer';
 
 const App=()=>{
   return (
@@ -20,11 +19,8 @@ const App=()=>{
       <GlobalWebkitScrolling/>
       <GlobalColoursCSS/>
 
-      <Container>
-        <StyledImage>
-          <img src={allTheColours}/>
-        </StyledImage>
-      </Container>
+      <ImageContainer>
+      </ImageContainer>
 
     </AppWrapper>
   );

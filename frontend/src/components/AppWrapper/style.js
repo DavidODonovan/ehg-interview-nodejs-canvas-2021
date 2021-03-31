@@ -8,12 +8,3 @@ export const Layout=styled.div`
   bottom: 0;
   background: var(--bg);
 `;
-
-export const Container=styled.div`
-  padding-top: 3.5em;
-  max-width: 1066px;
-  margin: auto;
-  overflow-y: scroll;
-  height: 100%;
-  display: flex;
-`;

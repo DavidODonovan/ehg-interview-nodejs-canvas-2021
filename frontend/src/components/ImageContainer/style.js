@@ -38,7 +38,7 @@ export const StyledImage=styled.div`
 
 const CreateAnim=({dims})=>{
 
-  const [ actualImageDims, setActualImageDims ] = useState({width: null, height: null});
+  const [ viewportImageDims, setViewportImageDims ] = useState({width: 0, height: 0});
 
   useEffect(()=>{
     const originalImageWidth = 16;

@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 
-const calcHeight=(props)=>{
+const createAnim=({dims})=>{
+  console.log('custom func: ', dims)
   const imageWidth = 16;
   const imageHeight = 2048;
   return (
@@ -40,11 +41,7 @@ export const ImageWrapper=styled.div`
 export const StyledImage=styled.div`
   img {
     width: 100%;
-    animation: ${(props)=>{
-      console.log(props.dims)
-      return imageAnim
-      }} 4s ease-in-out infinite;
-
+    animation: ${({dims})=>createAnim({dims})} 4s ease-in-out infinite;
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */
     image-rendering: -o-crisp-edges;            /* Opera               */

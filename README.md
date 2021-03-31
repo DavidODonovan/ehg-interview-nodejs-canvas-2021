@@ -8,10 +8,4 @@ The image is created using a simple Node.js app that leverages the 'canvas' pack
 
 The front end was bootstrapped with create-react-app.
 
-To create image and launch app:
-
-```code
-
-  npm run dev
-
-```;
+To create image and launch app: `npm run dev`

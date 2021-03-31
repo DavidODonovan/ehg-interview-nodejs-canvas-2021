@@ -7,7 +7,8 @@ import {
 } from 'styles/global';
 
 import allTheColours from './allTheColours.png';
-import { AppWrapper, StyledImage, Container } from './style';
+import { StyledImage, Container } from './style';
+import AppWrapper from 'components/AppWrapper';
 import { Provider } from 'contexts/ReactDims';
 
 const App=()=>{
@@ -18,11 +19,13 @@ const App=()=>{
       <GlobalTypographyCSS/>
       <GlobalWebkitScrolling/>
       <GlobalColoursCSS/>
+
       <Container>
         <StyledImage>
           <img src={allTheColours}/>
         </StyledImage>
       </Container>
+
     </AppWrapper>
   );
 };

@@ -9,21 +9,19 @@ export const Container=styled.div`
 
 const imageAnim = keyframes`
 	0% {
-		transform: translateX(0px);
+		transform: translateY(-2048px);
     trans
 	}
-	50% {
-		transform: translateX(-1024px);
-	}
 	100% {
-		transform: translateX(-2048px);
+		transform: translateY(0px);
 	}
 `;
 
 export const StyledImage=styled.div`
   img {
-    animation: ${imageAnim} 4s linear;
-    transform: translateX(-100px);
+    width: 400px;
+    animation: ${imageAnim} 4s ease-in-out;
+
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */
     image-rendering: -o-crisp-edges;            /* Opera               */

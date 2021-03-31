@@ -3,8 +3,8 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
 const Fractal = require('./Fractal');
 
-const width = 2048;
-const height = 16;
+const width = 16;
+const height = 2048;
 
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext('2d');

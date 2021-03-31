@@ -3,13 +3,10 @@ import { ImageWrapper, StyledImage } from './style';
 import allTheColours from './allTheColours.png';
 
 const ImageContainer=({ dims })=>{
-
-  // TODO: 3) pass dims down to style and render translations using dims and image size.
-
   return (
     <ImageWrapper>
       <StyledImage dims={dims}>
-        {dims.width && (<img src={allTheColours}/>)}
+        {dims.width && (<img src={allTheColours} alt="32000 colours"/>)}
       </StyledImage>
     </ImageWrapper>
   );

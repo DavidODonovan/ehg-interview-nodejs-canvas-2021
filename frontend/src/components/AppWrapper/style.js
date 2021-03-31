@@ -8,5 +8,4 @@ export const Layout=styled.div`
   align-items: center;
   padding: 2rem;
   background-color: var(--bg);
-  border: 1px solid red;
 `;

@@ -18,6 +18,7 @@ export const Container=styled.div`
 
 `;
 
+// change this so it always traverses entire image.
 const imageAnim = keyframes`
 	0% {
 		transform: translateY(-4096px);

@@ -4,7 +4,7 @@ export const Layout=styled.div`
   background-color: var(--bg);
   display: grid;
   height: 100vh;
-  grid: 50px 1fr 1fr 50px / 50px 1fr 1fr 50px;
+  grid: 20% 1fr 1fr 20% / 2fr 1fr 1fr 2fr;
 `;
 
 export const Container=styled.div`

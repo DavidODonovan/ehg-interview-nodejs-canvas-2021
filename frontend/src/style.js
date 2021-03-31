@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
+export const Container=styled.div`
+  border: 1px solid red;
+  width: 100%;
+  height: 100vh;
+`;
+
 export const StyledImage=styled.div`
   img {
-    height: 400px;
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */
     image-rendering: -o-crisp-edges;            /* Opera               */

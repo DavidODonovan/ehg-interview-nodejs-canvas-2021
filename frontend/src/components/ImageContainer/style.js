@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const Container=styled.div`
+export const ImageWrapper=styled.div`
   border: 1px solid var(--bg-accent);
   border-radius: var(--border-radius);
   -webkit-border-radius: var(--border-radius);
@@ -25,7 +25,7 @@ const imageAnim = keyframes`
 
 export const StyledImage=styled.div`
   img {
-    width: 220px;
+    width: 100%;
     animation: ${imageAnim} 4s ease-in-out infinite;
 
     image-rendering: optimizeSpeed;             /*                     */

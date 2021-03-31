@@ -1,7 +1,8 @@
+import colours from './allTheColours.png';
 const App=()=>{
   return (
     <div className="App">
-      hello
+      <img src={colours} style={{height: "400px"}}/>
     </div>
   );
 };

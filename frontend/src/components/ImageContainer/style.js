@@ -1,5 +1,19 @@
 import styled, { keyframes, css } from 'styled-components';
 
+const calcHeight=(props)=>{
+  const imageWidth = 16;
+  const imageHeight = 2048;
+  return (
+    keyframes`
+    	0% {
+    		transform: translateY(-4096px);
+    	}
+    	100% {
+    		transform: translateY(0px);
+    	}
+    `);
+};
+
 const imageAnim = keyframes`
 	0% {
 		transform: translateY(-4096px);
@@ -21,6 +35,7 @@ export const ImageWrapper=styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
 `;
+
 
 export const StyledImage=styled.div`
   img {

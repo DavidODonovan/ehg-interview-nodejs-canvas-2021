@@ -1,5 +1,14 @@
 import styled, { keyframes, css } from 'styled-components';
 
+const imageAnim = keyframes`
+	0% {
+		transform: translateY(-4096px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+`;
+
 export const ImageWrapper=styled.div`
   border: 1px solid var(--bg-accent);
   border-radius: var(--border-radius);
@@ -13,20 +22,13 @@ export const ImageWrapper=styled.div`
   overflow-y: hidden;
 `;
 
-// change this so it always traverses entire image.
-const imageAnim = keyframes`
-	0% {
-		transform: translateY(-4096px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-`;
-
 export const StyledImage=styled.div`
   img {
     width: 100%;
-    animation: ${imageAnim} 4s ease-in-out infinite;
+    animation: ${(props)=>{
+      console.log(props.dims)
+      return imageAnim
+      }} 4s ease-in-out infinite;
 
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */

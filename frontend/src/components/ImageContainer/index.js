@@ -1,5 +1,5 @@
 import { withContext } from 'contexts/ReactDims';
-import { StyledImage, ImageWrapper } from './style';
+import { ImageWrapper, StyledImage } from './style';
 import allTheColours from './allTheColours.png';
 
 const ImageContainer=({ dims })=>{
@@ -8,7 +8,7 @@ const ImageContainer=({ dims })=>{
 
   return (
     <ImageWrapper>
-      <StyledImage>
+      <StyledImage dims={dims}>
         {dims.width && (<img src={allTheColours}/>)}
       </StyledImage>
     </ImageWrapper>

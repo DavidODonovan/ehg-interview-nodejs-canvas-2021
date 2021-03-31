@@ -21,7 +21,7 @@ export const ImageWrapper=styled.div`
 export const StyledImage=styled.div`
   img {
     width: 100%;
-    animation: ${({dims})=>CreateAnim({dims})} 4s ease-in-out infinite;
+    animation: ${({dims})=>CreateAnim({dims})} 40s ease-in-out infinite;
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */
     image-rendering: -o-crisp-edges;            /* Opera               */
@@ -38,19 +38,23 @@ export const StyledImage=styled.div`
 
 const CreateAnim=({dims})=>{
 
-  const [ viewportImageDims, setViewportImageDims ] = useState({width: 0, height: 0});
+  const [ viewportImageHeight, setViewportImageHeight ] = useState(0);
 
   useEffect(()=>{
     const originalImageWidth = 16;
     const originalImageHeight = 2048;
-    const widthRatio = dims.width/originalImageWidth;
-    console.log("widthRatio: ", widthRatio)
+    const scaleRatio = dims.width/originalImageWidth;
+    let translationLength = ((scaleRatio * originalImageHeight) - originalImageHeight);
+    setViewportImageHeight(translationLength);
   }, [dims]);
 
   return (
     keyframes`
     	0% {
-    		transform: translateY(-4096px);
+    		transform: translateY(0px);
+    	}
+    	50% {
+    		transform: translateY(${-viewportImageHeight}px);
     	}
     	100% {
     		transform: translateY(0px);

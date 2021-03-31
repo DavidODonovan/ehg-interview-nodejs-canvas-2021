@@ -1,9 +1,16 @@
-import { GlobalNormalizeCSS, GlobalResetCSS, GlobalTypographyCSS, GlobalWebkitScrolling, GlobalColoursCSS } from 'styles/global';
-import { StyledImage, Container } from './style';
+import {
+  GlobalNormalizeCSS,
+  GlobalResetCSS,
+  GlobalTypographyCSS,
+  GlobalWebkitScrolling,
+  GlobalColoursCSS
+} from 'styles/global';
+
+import { AppWrapper, StyledImage, Container } from './style';
 import colours from './allTheColours.png';
 const App=()=>{
   return (
-    <>
+    <AppWrapper>
       <GlobalNormalizeCSS/>
       <GlobalResetCSS/>
       <GlobalTypographyCSS/>
@@ -14,7 +21,7 @@ const App=()=>{
           <img src={colours}/>
         </StyledImage>
       </Container>
-    </>
+    </AppWrapper>
   );
 };
 

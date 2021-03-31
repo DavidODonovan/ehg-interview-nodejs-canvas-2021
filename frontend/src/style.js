@@ -1,11 +1,14 @@
 import styled, { keyframes, css } from 'styled-components';
 
 export const Container=styled.div`
-  border: 1px solid red;
-  height: 100vh;
+  border: 1px solid #fff;
+  background: var(--bg);
+  height: 50%;
   overflow-x: hidden;
   overflow-y: hidden;
-  max-width: 400px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
   margin: auto;
 `;
 
@@ -21,7 +24,7 @@ const imageAnim = keyframes`
 
 export const StyledImage=styled.div`
   img {
-    width: 320px;
+    width: 220px;
     animation: ${imageAnim} 4s ease-in-out infinite;
 
     image-rendering: optimizeSpeed;             /*                     */
@@ -36,24 +39,13 @@ export const StyledImage=styled.div`
 
 // css source: // https://superuser.com/questions/530317/how-to-prevent-chrome-from-blurring-small-images-when-zoomed-in
 
-//
-//
-// export const CircularBells=styled(Circles).attrs((props)=>({
-// }))`
-//   & circle {
-//     cursor: pointer;
-//     fill: red;
-// 		/* discovered a new filter!*/
-// 		filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 1));
-//
-//     /* use weird $ syntax on props */
-//     /* also wrap return value in css helper */
-//     ${({$clicked})=>{
-//       if($clicked){
-//         return css`
-// 					animation: ${buttonAnim} .4s linear;
-// 					`;
-//       }
-//     }};
-//   }
-// `;
+export const AppWrapper=styled.div`
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bg);
+`;

@@ -1,10 +1,7 @@
 module.exports = class Fractal {
-  constructor(width, height, maxIterations){
+  constructor(width, height){
     this.width = width;
     this.height = height;
-    this.maxiterations = maxIterations;
-    this.palette = [];
-    this.counter = 0;
     this.coloursData = [];
     this.createBigColoursArray();
   }
@@ -27,8 +24,8 @@ module.exports = class Fractal {
     for (var y=0; y<this.height; y++) {
       for (var x=0; x<this.width; x++) {
         this.iterate(x, y, pixelsMatrix);
-      }
-    }
+      };
+    };
   };
 
   iterate=(x, y, pixelsMatrix)=>{
@@ -39,11 +36,10 @@ module.exports = class Fractal {
   pushColours=( pixelIndex, pixelsMatrix)=>{
     var colourIndex = pixelIndex/4;
     let colour;
-    if(colourIndex % 2){
-      colour = this.coloursData.pop()
-    } else {
-      colour = this.coloursData.shift()
-    };
+    if(colourIndex % 2)
+      colour = this.coloursData.pop();
+    else
+      colour = this.coloursData.shift();
 
     pixelsMatrix.data[pixelIndex] = colour[0];
     pixelsMatrix.data[pixelIndex+1] = colour[1];

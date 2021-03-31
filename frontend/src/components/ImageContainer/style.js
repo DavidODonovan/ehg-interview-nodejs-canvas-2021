@@ -1,7 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
+// this function is used to calculate viewport height of entire image so we can traverse the full length using css translateY();
 const CreateAnim=({dims})=>{
+
+  const [ realDims, setRealDims]=useState({width: null, height: null});
+
   useEffect(()=>{
     console.log("dims change:", dims)
   }, [dims]);
@@ -18,15 +22,6 @@ const CreateAnim=({dims})=>{
     	}
     `);
 };
-
-const imageAnim = keyframes`
-	0% {
-		transform: translateY(-4096px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-`;
 
 export const ImageWrapper=styled.div`
   border: 1px solid var(--bg-accent);

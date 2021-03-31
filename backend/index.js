@@ -19,4 +19,4 @@ fractal.fractalizeImage(pixelsMatrix);
 
 ctx.putImageData(pixelsMatrix, 0, 0);
 
-canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'mandelbrotFractals.png')))
+canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, '../frontend/src/allTheColours.png')))

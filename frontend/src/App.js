@@ -1,9 +1,10 @@
+import { StyledImage } from './style';
 import colours from './allTheColours.png';
 const App=()=>{
   return (
-    <div className="App">
-      <img src={colours} style={{height: "4000px"}}/>
-    </div>
+    <StyledImage>
+      <img src={colours}/>
+    </StyledImage>
   );
 };
 

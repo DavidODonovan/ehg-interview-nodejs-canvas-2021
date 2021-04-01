@@ -12,8 +12,6 @@ const ctx = canvas.getContext('2d');
 const pixelsMatrix = ctx.createImageData(width, height);
 
 const fractal = new Fractal(width, height);
-const coloursData = fractal.createBigColoursArray();
-
 fractal.fractalizeImage(pixelsMatrix);
 ctx.putImageData(pixelsMatrix, 0, 0);
 

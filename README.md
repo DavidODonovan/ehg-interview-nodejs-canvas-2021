@@ -14,7 +14,7 @@ To install dependencies open 'frontend' folder and run `npm i`, then navigate ba
 
 To create image and launch app: `npm run dev`
 
-The brief for the challenge:
+###The brief for the challenge was:###
 
 You need to write a program which will produce an image in which each colour occurs exactly once -- with no repetition and no unused colours.
 

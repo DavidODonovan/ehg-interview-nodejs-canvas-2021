@@ -1,6 +1,6 @@
 ## Colour Thing
 
-This is the coding challenge I completed to get an interview with my Education Horizons Group.
+This is the coding challenge I completed to get an interview with _Education Horizons Group_.
 
 This app displays a very long image that contains 32,768 discrete colours.
 
